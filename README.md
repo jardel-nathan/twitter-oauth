@@ -16,7 +16,7 @@
 <div style="width:50%" >
 <p align="center">
 <br><br>
- <img title="Typescript" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg" alt="typescript" width="60" height="60" style="padding:10px"/>git add 
+ <img title="Typescript" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg" alt="typescript" width="60" height="60" style="padding:10px"/>
  <img title="nextjs" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original-wordmark.svg" alt="nextjs" width="60" height="60" style="padding:10px"/>
  <img title="nodejs" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-plain.svg" alt="nodejs" width="60" height="60" style="padding:10px"/>
  <img title="express" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="express" width="60" height="60" style="padding:10px"/><br/>
