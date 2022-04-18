@@ -1,6 +1,6 @@
-import Authentication from '../auth/Authentication';
+import Authentication from './oauth/Authentication';
 import { promisify } from 'util';
-import {IVerifyCredentialsDTO} from './dtos/verifyCredentialsDTO';
+import {IVerifyCredentialsDTO} from './twitter/dtos/verifyCredentialsDTO';
 
 
 export class VerifyCredentialsService{

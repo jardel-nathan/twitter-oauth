@@ -1,6 +1,6 @@
-import Authentication from '../auth/Authentication';
+import Authentication from './oauth/Authentication';
 import { promisify } from 'util';
-import { IGetUserTimelineDTO } from './dtos/getUserTimelineDTO';
+import { IGetUserTimelineDTO } from './twitter/dtos/getUserTimelineDTO';
 
 
 export class GetUserTimelineService {

@@ -1,11 +1,11 @@
 import { Router } from "express"; // Router: é usado para criar rotas 
-import Authentication from "../../services/auth/Authentication";
-import { IAccessToken } from "../../services/auth/Authentication";
-import {CreateRequestTokenService} from "../../services/twitter/createRequestToken.service";
-import {CreateAccessTokenService} from "../../services/twitter/createAccessToken.service";
-import {GetUserTimelineService} from "../../services/twitter/getUserTimeline.service";
-import {VerifyCredentialsService} from "../../services/twitter/verifyCredentials.service";
-
+import Authentication from "../../services/oauth/Authentication";
+import { IAccessToken } from "../../services/oauth/Authentication";
+import { CreateRequestTokenService } from "../../services/createRequestToken.service";
+import { CreateAccessTokenService } from "../../services/createAccessToken.service";
+import { GetUserTimelineService } from "../../services/getUserTimeline.service";
+import { VerifyCredentialsService } from "../../services/verifyCredentials.service";
+import TwitterRepository from "../../services/infra/twitter/repository/twitterRepository";
 const routes = Router()
 // id: 'bEQtV1NCNjZnOHV1SmJuZnBQdUU6MTpjaQ',
 // secret: '8uBPX10n0JObgtZqEgMXTxa2wFrIPXAtU3VtZ5Hm07ZOb3aVDd'
@@ -15,7 +15,7 @@ const auth = new Authentication();
 routes.post('/request_token', async (req, res) => { // rota do tipo get
 
     try {
-        const reateRequestTokenService = new CreateRequestTokenService()
+        const reateRequestTokenService = new CreateRequestTokenService(new TwitterRepository())
         const link = await reateRequestTokenService.execute(); // link de autenticação
         return res.json(link)
     } catch (e: any) {
@@ -30,7 +30,7 @@ routes.post('/access_token', async (req, res) => { // rota do tipo get
     const oauth_verifier = req.body.oauth_verifier as string;
     const param: IAccessToken = { oauth_token, oauth_verifier }
     try {
-        const createAccessTokenService = new CreateAccessTokenService()
+        const createAccessTokenService = new CreateAccessTokenService(new TwitterRepository())
         const access_token = await createAccessTokenService.execute(param); // link de autenticação
         return res.json({ access_token })
     } catch (e: any) {
